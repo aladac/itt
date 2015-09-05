@@ -38,3 +38,8 @@ I tend to color my tabs for easier reference. I prefer using the keyboard to cli
 ## TODO
 - ~~Make itt a gem for easier install~~
 - ~~Generate a nicer gif~~
+
+## Credit
+- [Change iTerm2 tab title from commandline (superuser.com)](http://superuser.com/questions/292652/change-iterm2-window-and-tab-titles-in-zsh)
+- [iTerm2 escape codes (iterm2.com)](https://www.iterm2.com/documentation-escape-codes.html)
+- [How to make a gif with ffmpeg (superuser.com)](http://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality)
