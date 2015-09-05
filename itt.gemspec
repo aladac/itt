@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'itt'
-  s.version     = '0.0.1'
+  s.version     = '0.1.0'
   s.date        = '2015-09-05'
   s.summary     = "itt"
   s.description = "iTerm2 tabs color and title util"
