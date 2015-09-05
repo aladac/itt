@@ -20,6 +20,7 @@ if ARGV.count == 0
   exit
 end
 
+# Escape sequenes to clear the title and color
 clear_color = "\e]6;1;bg;*;default\a"
 clear_title = "\e]1;\a"
 
