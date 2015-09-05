@@ -22,6 +22,10 @@ Examples:
 	itt p web-server
 	itt orange rails-console
 
+Clear title and color:
+
+	itt clear
+
 Colors: red, green, blue, orange, yellow, purple
 ```
 

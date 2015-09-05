@@ -16,6 +16,8 @@ if ARGV.count == 0
   puts "USAGE:\nitt [color] title"
   puts "\nExamples:\n\n\titt purple web-server\n\titt p web-server"
   puts "\titt orange rails-console\n\n"
+  puts "Clear title and color:\n\n"
+  puts "\titt clear\n\n"
   puts "Colors: #{COLORS.keys.map(&:to_s).join(', ')}\n\n"
   exit
 end
