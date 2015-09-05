@@ -1,3 +1,4 @@
+[![Gem Version](https://badge.fury.io/rb/itt.svg)](http://badge.fury.io/rb/itt)
 # itt - iTerm2 tabs color and title util
 ![Example](https://github.com/aladac/it/raw/master/doc/example.gif)
 
