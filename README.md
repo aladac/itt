@@ -1,6 +1,11 @@
 # itt - iTerm2 tabs color and title util
 ![Example](https://github.com/aladac/it/raw/master/doc/example.gif)
 
+## Install
+```
+gem install itt
+```
+
 ## Usage
 Just call `itt` without any arguments to see help
 
