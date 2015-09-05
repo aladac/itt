@@ -1,0 +1,42 @@
+#!/usr/bin/env ruby
+
+# Display help and exit if no arguments are given
+if ARGV.count == 0
+  puts "Sets the color and/or title of the current iTerm2 tab\n\n"
+  puts "USAGE:\nit [color] title"
+  puts "\nExamples:\n\n\tit purple web-server\n\tit p web-server"
+  puts "\tit orange rails-console\n\n"
+  exit
+end
+
+# Predefined colors, as close to the default iTerm2 tab colors as possible
+COLORS = {
+  red: [214, 110, 107],
+  green: [183, 213, 103],
+  blue: [117, 165, 236],
+  orange: [223, 157, 78],
+  yellow: [167, 160, 96],
+  purple: [140, 121, 149]
+}
+
+clear_color = "\e]6;1;bg;*;default\a"
+clear_title = "\e]1;\a"
+
+# Clear the tab title and color
+if ARGV[0] == 'clear'
+  print clear_color
+  print clear_title
+# If first argument matches one of the colors set the tab color ...
+elsif rgb = COLORS.select { |k, _v| k.to_s =~ /^#{ARGV[0]}/ }.values[0]
+  red, green, blue = rgb
+  print "\e]6;1;bg;red;brightness;#{red}\a"
+  print "\e]6;1;bg;green;brightness;#{green}\a"
+  print "\e]6;1;bg;blue;brightness;#{blue}\a"
+  # ... and if the second argument is present, set the title from the remaining
+  # arguments
+  print "\e];#{ARGV[1..-1].join(' ')}\007" if ARGV[1]
+# If first argument is not a clear command or color set the title from all
+# arguments if at least one is present
+elsif ARGV[0]
+  print "\e]; #{ARGV[0..-1].join(' ')}\007"
+end
