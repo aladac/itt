@@ -13,9 +13,9 @@ COLORS = {
 # Display help and exit if no arguments are given
 if ARGV.count == 0
   puts "Sets the color and/or title of the current iTerm2 tab\n\n"
-  puts "USAGE:\nit [color] title"
-  puts "\nExamples:\n\n\tit purple web-server\n\tit p web-server"
-  puts "\tit orange rails-console\n\n"
+  puts "USAGE:\nitt [color] title"
+  puts "\nExamples:\n\n\titt purple web-server\n\titt p web-server"
+  puts "\titt orange rails-console\n\n"
   puts "Colors: #{COLORS.keys.map(&:to_s).join(', ')}\n\n"
   exit
 end
