@@ -1,14 +1,5 @@
 #!/usr/bin/env ruby
 
-# Display help and exit if no arguments are given
-if ARGV.count == 0
-  puts "Sets the color and/or title of the current iTerm2 tab\n\n"
-  puts "USAGE:\nit [color] title"
-  puts "\nExamples:\n\n\tit purple web-server\n\tit p web-server"
-  puts "\tit orange rails-console\n\n"
-  exit
-end
-
 # Predefined colors, as close to the default iTerm2 tab colors as possible
 COLORS = {
   red: [214, 110, 107],
@@ -18,6 +9,16 @@ COLORS = {
   yellow: [167, 160, 96],
   purple: [140, 121, 149]
 }
+
+# Display help and exit if no arguments are given
+if ARGV.count == 0
+  puts "Sets the color and/or title of the current iTerm2 tab\n\n"
+  puts "USAGE:\nit [color] title"
+  puts "\nExamples:\n\n\tit purple web-server\n\tit p web-server"
+  puts "\tit orange rails-console\n\n"
+  puts "Colors: #{COLORS.keys.map(&:to_s).join(', ')}\n\n"
+  exit
+end
 
 clear_color = "\e]6;1;bg;*;default\a"
 clear_title = "\e]1;\a"
