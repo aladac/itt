@@ -36,5 +36,5 @@ If you are using `zsh` you will need to add `export DISABLE_AUTO_TITLE=true` in 
 I tend to color my tabs for easier reference. I prefer using the keyboard to clicking on stuff. There might be a way to do this using keyboard shortcuts but honestly I was too lazy to research it properly and lets face it - this is not a lot o work.
 
 ## TODO
-- Make `itt` a gem for easier install
-- Generate a nicer gif
+- ~~Make itt a gem for easier install~~
+- ~~Generate a nicer gif~~
