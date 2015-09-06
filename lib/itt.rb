@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'version'
 require 'rumoji'
 module ITT

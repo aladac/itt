@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'codeclimate-test-reporter'
 CodeClimate::TestReporter.start
 require "rspec"
@@ -49,7 +50,7 @@ describe 'itt' do
       expect(@itt).to eq(clear_color + clear_title)
     end
   end
-  
+
   describe "title with emoji code" do
     before do
       @itt = `bin/itt :poop:`
