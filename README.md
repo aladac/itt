@@ -25,26 +25,34 @@ gem install itt
 Just call `itt` without any arguments to see help
 
 ```
+Version: 0.1.6
+
 Sets the color and/or title of the current iTerm2 tab
 
 USAGE:
 itt [color] title
-
 Examples:
 
 	itt purple web-server
-	itt p web-server
-	itt orange rails-console
+	itt p web-server	itt orange rails-console
+	itt blue :whale: docker
 
 Clear title and color:
 
 	itt clear
 
 Colors: red, green, blue, orange, yellow, purple
+
+Emoji cheat-sheet: http://www.emoji-cheat-sheet.com
 ```
 
 ## zsh
 If you are using `zsh` you will need to add `export DISABLE_AUTO_TITLE=true` in your `.zshrc`
+
+## Emoji
+Thanks to the [rumoji](https://github.com/mwunsch/rumoji) gem `itt` can use Emoji using emoji codes like `:grin:` to get a :grin:
+
+The cheat-sheet is available [here](http://www.emoji-cheat-sheet.com/) (The link is also displayed in `itt` help)
 
 ## Why?
 I tend to color my tabs for easier reference. I prefer using the keyboard to clicking on stuff. There might be a way to do this using keyboard shortcuts but honestly I was too lazy to research it properly and lets face it - this is not a lot o work.

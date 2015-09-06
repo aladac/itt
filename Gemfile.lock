@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    itt (0.1.5)
-      rumoji
+    itt (0.1.6)
+      rumoji (~> 0.4)
 
 GEM
   remote: https://rubygems.org/

@@ -17,10 +17,12 @@ module ITT
   HELP << "Sets the color and/or title of the current iTerm2 tab\n\n"
   HELP << "USAGE:\nitt [color] title"
   HELP << "\nExamples:\n\n\titt purple web-server\n\titt p web-server"
-  HELP << "\titt orange rails-console\n\n"
+  HELP << "\titt orange rails-console\n"
+  HELP << "\titt blue :whale: docker\n\n"
   HELP << "Clear title and color:\n\n"
   HELP << "\titt clear\n\n"
   HELP << "Colors: #{COLORS.keys.map(&:to_s).join(', ')}\n\n"
+  HELP << "Emoji cheat-sheet: http://www.emoji-cheat-sheet.com\n\n"
 
   # Escape sequence to set the title
   def set_title(title)
