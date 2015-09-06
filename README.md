@@ -3,8 +3,11 @@
 [![Code Climate](https://codeclimate.com/github/aladac/itt/badges/gpa.svg)](https://codeclimate.com/github/aladac/itt)
 [![Downloads](http://ruby-gem-downloads-badge.herokuapp.com/itt?type=total)](https://rubygems.org/gems/itt)
 
-![itt](https://github.com/aladac/itt/raw/master/doc/logo.png)
+![itt](https://github.com/aladac/itt/raw/master/doc/logo.png)<br/>
 *iTerm2 tabs color and title util*
+
+Demo
+---
 
 
 ![Example](https://github.com/aladac/itt/raw/master/doc/example.gif)
