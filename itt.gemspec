@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.authors     = ['Adam Ladachowski']
   s.email       = 'adam@saiden.pl'
   s.files       = ['bin/itt', 'lib/itt.rb']
+  s.add_runtime_dependency  'rumoji'
   s.post_install_message = "If you are using zsh please add\n\nexport DISABLE_AUTO_TITLE=true\n\nTo .zshrc\n\n"
   s.executables << 'itt'
   s.homepage    =

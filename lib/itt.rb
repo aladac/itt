@@ -1,4 +1,5 @@
 require 'version'
+require 'rumoji'
 module ITT
   # Predefined colors, as close to the default iTerm2 tab colors as possible
   COLORS = {
@@ -23,7 +24,7 @@ module ITT
 
   # Escape sequence to set the title
   def set_title(title)
-    "\e];#{title}\007"
+    "\e];#{Rumoji.decode(title)}\007"
   end
 
   # Escape sequences to set the color
