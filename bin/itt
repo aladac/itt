@@ -5,8 +5,6 @@ Bundler.require
 
 include ITT
 
-# Predefined colors, as close to the default iTerm2 tab colors as possible
-
 # Display help and exit if no arguments are given
 if ARGV.count == 0
   puts HELP

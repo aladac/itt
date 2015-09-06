@@ -1,4 +1,5 @@
 module ITT
+  # Predefined colors, as close to the default iTerm2 tab colors as possible
   COLORS = {
     red: [214, 110, 107],
     green: [183, 213, 103],
@@ -7,6 +8,8 @@ module ITT
     yellow: [167, 160, 96],
     purple: [140, 121, 149]
   }
+
+  # Help info
   HELP = ''
   HELP << "Sets the color and/or title of the current iTerm2 tab\n\n"
   HELP << "USAGE:\nitt [color] title"
