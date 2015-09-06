@@ -5,9 +5,11 @@ PATH
 
 GEM
   specs:
+    rake (10.4.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   itt!
+  rake
