@@ -1,6 +1,7 @@
 [![Gem Version](https://badge.fury.io/rb/itt.svg)](http://badge.fury.io/rb/itt)
 [![Build Status](https://travis-ci.org/aladac/itt.svg?branch=master)](https://travis-ci.org/aladac/itt)
 [![Code Climate](https://codeclimate.com/github/aladac/itt/badges/gpa.svg)](https://codeclimate.com/github/aladac/itt)
+[![Test Coverage](https://codeclimate.com/github/aladac/itt/badges/coverage.svg)](https://codeclimate.com/github/aladac/itt/coverage)
 [![Downloads](http://ruby-gem-downloads-badge.herokuapp.com/itt?type=total)](https://rubygems.org/gems/itt)
 
 ![itt](https://github.com/aladac/itt/raw/master/doc/logo.png)<br/>
