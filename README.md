@@ -1,4 +1,4 @@
-[![Gem Version](https://badge.fury.io/rb/itt.svg)](http://badge.fury.io/rb/itt) ![Downloads](http://ruby-gem-downloads-badge.herokuapp.com/itt?type=total)
+[![Gem Version](https://badge.fury.io/rb/itt.svg)](http://badge.fury.io/rb/itt) [![Downloads](http://ruby-gem-downloads-badge.herokuapp.com/itt?type=total)](https://rubygems.org/gems/itt)
 # itt - iTerm2 tabs color and title util
 ![Example](https://github.com/aladac/itt/raw/master/doc/example.gif)
 
