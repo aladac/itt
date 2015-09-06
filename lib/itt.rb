@@ -1,5 +1,5 @@
+require 'version'
 module ITT
-  VERSION = '0.1.5'
   # Predefined colors, as close to the default iTerm2 tab colors as possible
   COLORS = {
     red: [214, 110, 107],
