@@ -6,4 +6,4 @@ rvm:
   - 2.2.3
 deploy:
   provider: rubygems
-  api_key: '86935eaf7e0c9143927057305061d8a8'
+  api_key: <%= ENV['RUBYGEMS_API_KEY'] %>
