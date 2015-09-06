@@ -5,7 +5,7 @@ require 'itt'
 Gem::Specification.new do |s|
   s.required_ruby_version = '>= 1.9.3'
   s.name        = 'itt'
-  s.version     = '0.1.4'
+  s.version     = ITT::VERSION
   s.date        = '2015-09-06'
   s.summary     = 'itt'
   s.description = 'iTerm2 tabs color and title util'
