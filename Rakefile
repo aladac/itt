@@ -1,8 +1,10 @@
 require 'rake'
 require 'rake/testtask'
 
-Rake::TestTask.new do |t|
-  t.test_files = Dir.glob('spec/**/*_spec.rb')
+begin
+  require 'rspec/core/rake_task'
+  RSpec::Core::RakeTask.new(:spec)
+rescue LoadError
 end
 
-task(default: :test)
+task(default: :spec)
