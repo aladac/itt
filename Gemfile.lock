@@ -1,0 +1,13 @@
+PATH
+  remote: .
+  specs:
+    itt (0.1.3)
+
+GEM
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  itt!
