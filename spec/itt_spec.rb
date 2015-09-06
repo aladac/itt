@@ -49,4 +49,13 @@ describe 'itt' do
       expect(@itt).to eq(clear_color + clear_title)
     end
   end
+  
+  describe "title with emoji code" do
+    before do
+      @itt = `bin/itt :poop:`
+    end
+    it "should return an emoji" do
+      expect(@itt).to match(/💩/)
+    end
+  end
 end
