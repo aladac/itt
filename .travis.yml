@@ -4,3 +4,6 @@ rvm:
   - 2.0.0
   - 2.1.5
   - 2.2.2
+deploy:
+  provider: rubygems
+  api_key: '86935eaf7e0c9143927057305061d8a8'

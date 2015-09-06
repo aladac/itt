@@ -16,10 +16,12 @@ module ITT
   HELP << "\titt clear\n\n"
   HELP << "Colors: #{COLORS.keys.map(&:to_s).join(', ')}\n\n"
 
+  # Escape sequence to set the title
   def set_title(title)
     "\e];#{title}\007"
   end
 
+  # Escape sequences to set the color
   def set_color(red, green, blue)
     output = ''
     output << "\e]6;1;bg;red;brightness;#{red}\a"
@@ -27,7 +29,7 @@ module ITT
     output << "\e]6;1;bg;blue;brightness;#{blue}\a"
   end
 
-  # Escape sequenes to clear the title and color
+  # Escape sequences to clear the title and color
   def clear_color
     "\e]6;1;bg;*;default\a"
   end
