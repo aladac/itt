@@ -1,16 +1,16 @@
-require 'minitest/autorun'
+require 'codeclimate-test-reporter'
+CodeClimate::TestReporter.start
+require "rspec"
 require 'itt'
 include ITT
 
 describe 'itt' do
-  before do
-    @itt_no_params = `bin/itt`
-    @itt_just_title = `bin/itt title`
-  end
-
   describe 'running w/o params' do
+    before do
+      @itt = `bin/itt`
+    end
     it 'returns help' do
-      @itt_no_params.must_equal HELP
+      expect(@itt).to eq(HELP)
     end
   end
 
@@ -19,7 +19,7 @@ describe 'itt' do
       @itt = `bin/itt red`
     end
     it 'should return color setting escape sequence' do
-      @itt.must_equal set_color(*COLORS[:red])
+      expect(@itt).to eq(set_color(*COLORS[:red]))
     end
   end
 
@@ -28,7 +28,7 @@ describe 'itt' do
       @itt = `bin/itt red title`
     end
     it 'should return color and title setting escape sequence' do
-      @itt.must_equal set_color(*COLORS[:red]) + set_title('title')
+      expect(@itt).to eq(set_color(*COLORS[:red]) + set_title('title'))
     end
   end
 
@@ -37,7 +37,16 @@ describe 'itt' do
       @itt = `bin/itt title`
     end
     it 'should return title setting escape sequence' do
-      @itt.must_equal set_title('title')
+      expect(@itt).to eq(set_title('title'))
+    end
+  end
+
+  describe 'running with clear argument' do
+    before do
+      @itt = `bin/itt clear`
+    end
+    it 'should return the escape sequences to clear title and color' do
+      expect(@itt).to eq(clear_color + clear_title)
     end
   end
 end

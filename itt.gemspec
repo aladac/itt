@@ -1,6 +1,6 @@
 $LOAD_PATH.unshift(File.expand_path('../lib', __FILE__))
 
-require 'itt'
+require 'version'
 
 Gem::Specification.new do |s|
   s.required_ruby_version = '>= 1.9.3'
