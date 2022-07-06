@@ -1,7 +1,6 @@
 [![Gem Version](https://badge.fury.io/rb/itt.svg)](http://badge.fury.io/rb/itt)
 [![Build Status](https://travis-ci.org/aladac/itt.svg?branch=master)](https://travis-ci.org/aladac/itt)
 [![Code Climate](https://codeclimate.com/github/aladac/itt/badges/gpa.svg)](https://codeclimate.com/github/aladac/itt)
-[![Test Coverage](https://codeclimate.com/github/aladac/itt/badges/coverage.svg)](https://codeclimate.com/github/aladac/itt/coverage)
 
 ![itt](https://github.com/aladac/itt/raw/master/doc/logo.png)<br/>
 *iTerm2 tabs color and title util*
