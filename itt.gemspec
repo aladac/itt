@@ -1,4 +1,4 @@
-$LOAD_PATH.unshift(File.expand_path('../lib', __FILE__))
+$LOAD_PATH.unshift(File.expand_path('lib', __dir__))
 
 require 'version'
 
@@ -12,10 +12,10 @@ Gem::Specification.new do |s|
   s.authors     = ['Adam Ladachowski']
   s.email       = 'adam@saiden.pl'
   s.files       = ['bin/itt', 'lib/itt.rb', 'lib/version.rb']
-  s.add_runtime_dependency  'rumoji', '~> 0.4'
+  s.add_runtime_dependency 'rumoji', '~> 0.4'
   s.post_install_message = "If you are using zsh please add\n\nexport DISABLE_AUTO_TITLE=true\n\nTo .zshrc\n\n"
   s.executables << 'itt'
-  s.homepage    =
+  s.homepage =
     'https://github.com/aladac/itt'
   s.license = 'MIT'
 end

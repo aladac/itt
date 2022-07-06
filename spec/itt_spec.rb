@@ -1,7 +1,6 @@
-# encoding: UTF-8
 require 'simplecov'
 SimpleCov.start
-require "rspec"
+require 'rspec'
 require 'itt'
 include ITT
 
@@ -51,11 +50,11 @@ describe 'itt' do
     end
   end
 
-  describe "title with emoji code" do
+  describe 'title with emoji code' do
     before do
       @itt = `bin/itt :poop:`
     end
-    it "should return an emoji" do
+    it 'should return an emoji' do
       expect(@itt).to match(/💩/)
     end
   end
