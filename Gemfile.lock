@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    itt (0.1.6)
+    itt (0.1.7)
       rumoji (~> 0.4)
 
 GEM
@@ -41,4 +41,4 @@ DEPENDENCIES
   simplecov (~> 0.21.2)
 
 BUNDLED WITH
-   2.3.16
+   2.3.9

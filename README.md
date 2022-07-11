@@ -24,7 +24,7 @@ gem install itt
 Just call `itt` without any arguments to see help
 
 ```
-Version: 0.1.6
+Version: 0.1.7
 
 Sets the color and/or title of the current iTerm2 tab
 
