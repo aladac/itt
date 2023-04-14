@@ -32,7 +32,8 @@ itt [color] title
 Examples:
 
 	itt purple web-server
-	itt p web-server	itt orange rails-console
+	itt p web-server	
+	itt orange rails-console
 	itt blue :whale: docker
 
 Clear title and color:
