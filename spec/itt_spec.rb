@@ -1,60 +1,59 @@
-require 'simplecov'
+require "simplecov"
 SimpleCov.start
-require 'rspec'
-require 'itt'
-include ITT
+require "rspec"
+require "itt"
 
-describe 'itt' do
-  describe 'running w/o params' do
+describe "itt" do
+  describe "running w/o params" do
     before do
       @itt = `bin/itt`
     end
-    it 'returns help' do
-      expect(@itt).to eq(HELP)
+    it "returns help" do
+      expect(@itt).to eq(ITT::HELP)
     end
   end
 
-  describe 'running with color argument' do
+  describe "running with color argument" do
     before do
       @itt = `bin/itt red`
     end
-    it 'should return color setting escape sequence' do
-      expect(@itt).to eq(set_color(*COLORS[:red]))
+    it "should return color setting escape sequence" do
+      expect(@itt).to eq(ITT.set_color(*ITT::COLORS[:red]))
     end
   end
 
-  describe 'running with color argument and title' do
+  describe "running with color argument and title" do
     before do
       @itt = `bin/itt red title`
     end
-    it 'should return color and title setting escape sequence' do
-      expect(@itt).to eq(set_color(*COLORS[:red]) + set_title('title'))
+    it "should return color and title setting escape sequence" do
+      expect(@itt).to eq(ITT.set_color(*ITT::COLORS[:red]) + ITT.set_title("title"))
     end
   end
 
-  describe 'running with title argument' do
+  describe "running with title argument" do
     before do
       @itt = `bin/itt title`
     end
-    it 'should return title setting escape sequence' do
-      expect(@itt).to eq(set_title('title'))
+    it "should return title setting escape sequence" do
+      expect(@itt).to eq(ITT.set_title("title"))
     end
   end
 
-  describe 'running with clear argument' do
+  describe "running with clear argument" do
     before do
       @itt = `bin/itt clear`
     end
-    it 'should return the escape sequences to clear title and color' do
-      expect(@itt).to eq(clear_color + clear_title)
+    it "should return the escape sequences to clear title and color" do
+      expect(@itt).to eq(ITT.clear_color + ITT.clear_title)
     end
   end
 
-  describe 'title with emoji code' do
+  describe "title with emoji code" do
     before do
       @itt = `bin/itt :poop:`
     end
-    it 'should return an emoji' do
+    it "should return an emoji" do
       expect(@itt).to match(/💩/)
     end
   end

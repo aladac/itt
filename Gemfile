@@ -1,8 +1,9 @@
-source 'https://rubygems.org'
-gem 'rake', group: %i[development test]
+source "https://rubygems.org"
+gem "rake", group: %i[development test]
+gem "standard", group: %i[development test]
 group :test do
-  gem 'rspec'
+  gem "rspec"
 end
 gemspec
 
-gem 'simplecov', '~> 0.21.2'
+gem "simplecov", "~> 0.21.2"
