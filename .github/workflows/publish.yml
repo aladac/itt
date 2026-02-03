@@ -38,8 +38,11 @@ jobs:
           gem build itt.gemspec
           echo "gem_file=$(ls *.gem)" >> $GITHUB_OUTPUT
 
+      - name: Configure RubyGems credentials
+        uses: rubygems/configure-rubygems-credentials@v1.0.0
+
       - name: Publish to RubyGems
-        uses: rubygems/release-gem@v1
+        run: gem push ${{ steps.build.outputs.gem_file }}
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
