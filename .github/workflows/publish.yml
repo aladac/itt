@@ -1,0 +1,47 @@
+name: Publish Gem
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+
+      - name: Extract version from tag
+        id: version
+        run: |
+          TAG=${GITHUB_REF#refs/tags/v}
+          echo "version=$TAG" >> $GITHUB_OUTPUT
+          if [[ "$TAG" =~ -pre[0-9]*$ ]] || [[ "$TAG" =~ -alpha[0-9]*$ ]] || [[ "$TAG" =~ -beta[0-9]*$ ]] || [[ "$TAG" =~ -rc[0-9]*$ ]]; then
+            echo "prerelease=true" >> $GITHUB_OUTPUT
+          else
+            echo "prerelease=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Build gem
+        run: gem build itt.gemspec
+
+      - name: Publish to RubyGems
+        env:
+          GEM_HOST_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
+        run: gem push itt-${{ steps.version.outputs.version }}.gem
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: itt-${{ steps.version.outputs.version }}.gem
+          prerelease: ${{ steps.version.outputs.prerelease }}
+          generate_release_notes: true
