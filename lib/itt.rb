@@ -11,18 +11,50 @@ module ITT
     purple: [140, 121, 149]
   }
 
+  # ANSI formatting
+  module Style
+    RESET  = "\e[0m"
+    BOLD   = "\e[1m"
+    DIM    = "\e[2m"
+    # Foreground colors
+    RED    = "\e[38;2;214;110;107m"
+    GREEN  = "\e[38;2;183;213;103m"
+    BLUE   = "\e[38;2;117;165;236m"
+    ORANGE = "\e[38;2;223;157;78m"
+    YELLOW = "\e[38;2;167;160;96m"
+    PURPLE = "\e[38;2;140;121;149m"
+    CYAN   = "\e[36m"
+    WHITE  = "\e[37m"
+  end
+
+  def self.styled_colors
+    COLORS.keys.map do |c|
+      color_code = Style.const_get(c.to_s.upcase)
+      "#{color_code}#{c}#{Style::RESET}"
+    end.join(Style::DIM + ', ' + Style::RESET)
+  end
+
   # Help info
-  HELP = ''
-  HELP << "Version: #{VERSION}\n\n"
-  HELP << "Sets the color and/or title of the current iTerm2 tab\n\n"
-  HELP << "USAGE:\nitt [color] title"
-  HELP << "\nExamples:\n\n\titt purple web-server\n\titt p web-server"
-  HELP << "\titt orange rails-console\n"
-  HELP << "\titt blue :whale: docker\n\n"
-  HELP << "Clear title and color:\n\n"
-  HELP << "\titt clear\n\n"
-  HELP << "Colors: #{COLORS.keys.map(&:to_s).join(', ')}\n\n"
-  HELP << "Emoji cheat-sheet: http://www.emoji-cheat-sheet.com\n\n"
+  HELP = <<~HELP
+    #{Style::BOLD}itt#{Style::RESET} #{Style::DIM}v#{VERSION}#{Style::RESET}
+    #{Style::DIM}iTerm2 tab color and title utility#{Style::RESET}
+
+    #{Style::BOLD}USAGE#{Style::RESET}
+        itt #{Style::DIM}[color]#{Style::RESET} #{Style::CYAN}<title>#{Style::RESET}
+        itt clear
+
+    #{Style::BOLD}EXAMPLES#{Style::RESET}
+        itt #{Style::PURPLE}purple#{Style::RESET} web-server     #{Style::DIM}# Set color and title#{Style::RESET}
+        itt #{Style::PURPLE}p#{Style::RESET} web-server          #{Style::DIM}# Short color name#{Style::RESET}
+        itt #{Style::ORANGE}orange#{Style::RESET} rails-console
+        itt #{Style::BLUE}blue#{Style::RESET} :whale: docker    #{Style::DIM}# Emoji support#{Style::RESET}
+        itt #{Style::RED}clear#{Style::RESET}                   #{Style::DIM}# Reset to default#{Style::RESET}
+
+    #{Style::BOLD}COLORS#{Style::RESET}
+        #{styled_colors}
+
+    #{Style::DIM}Emoji codes: https://emoji-cheat-sheet.com#{Style::RESET}
+  HELP
 
   # Escape sequence to set the title
   def set_title(title)
