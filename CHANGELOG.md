@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.2.0.pre2
+## 0.2.0
 
 - Add GitHub Actions CI workflow (test on Ruby 2.6, lint with StandardRB on Ruby 3.3)
 - Add GitHub Actions publish workflow with RubyGems trusted publisher (OIDC)
