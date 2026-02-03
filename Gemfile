@@ -1,8 +1,10 @@
 source "https://rubygems.org"
 gem "rake", group: %i[development test]
-gem "standard", group: %i[development test]
 group :test do
   gem "rspec"
+end
+group :lint do
+  gem "standard"
 end
 gemspec
 
