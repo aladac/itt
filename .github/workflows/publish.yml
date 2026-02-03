@@ -32,16 +32,19 @@ jobs:
           fi
 
       - name: Build gem
-        run: gem build itt.gemspec
+        id: build
+        run: |
+          gem build itt.gemspec
+          echo "gem_file=$(ls *.gem)" >> $GITHUB_OUTPUT
 
       - name: Publish to RubyGems
         env:
           GEM_HOST_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
-        run: gem push itt-${{ steps.version.outputs.version }}.gem
+        run: gem push ${{ steps.build.outputs.gem_file }}
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: itt-${{ steps.version.outputs.version }}.gem
+          files: ${{ steps.build.outputs.gem_file }}
           prerelease: ${{ steps.version.outputs.prerelease }}
           generate_release_notes: true
