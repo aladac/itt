@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    itt (0.2.0.pre.pre1)
+    itt (0.2.0.pre1)
       rumoji (~> 0.4)
 
 GEM
