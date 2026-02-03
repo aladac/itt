@@ -6,6 +6,7 @@ on:
       - 'v*'
 
 permissions:
+  packages: write
   contents: write
   id-token: write
 
@@ -50,3 +51,13 @@ jobs:
           files: ${{ steps.build.outputs.gem_file }}
           prerelease: ${{ steps.version.outputs.prerelease }}
           generate_release_notes: true
+
+      - name: Publish to GitHub Packages
+        run: |
+          mkdir -p ~/.gem
+          cat << EOF > ~/.gem/credentials
+          ---
+          :github: Bearer ${{ secrets.GITHUB_TOKEN }}
+          EOF
+          chmod 0600 ~/.gem/credentials
+          gem push --key github --host https://rubygems.pkg.github.com/${{ github.repository_owner }} *.gem
