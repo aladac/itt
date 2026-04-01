@@ -1,5 +1,7 @@
-require "version"
-require "rumoji"
+# frozen_string_literal: true
+
+require 'version'
+require 'rumoji'
 module ITT
   # Predefined colors, as close to the default iTerm2 tab colors as possible
   COLORS = {
@@ -9,7 +11,7 @@ module ITT
     orange: [223, 157, 78],
     yellow: [167, 160, 96],
     purple: [140, 121, 149]
-  }
+  }.freeze
 
   # ANSI formatting
   module Style
@@ -31,7 +33,7 @@ module ITT
     COLORS.keys.map do |c|
       color_code = Style.const_get(c.to_s.upcase)
       "#{color_code}#{c}#{Style::RESET}"
-    end.join(Style::DIM + ", " + Style::RESET)
+    end.join("#{Style::DIM}, #{Style::RESET}")
   end
 
   # Help info
@@ -65,7 +67,7 @@ module ITT
 
   # Escape sequences to set the color
   def set_color(red, green, blue)
-    output = ""
+    output = ''
     output << "\e]6;1;bg;red;brightness;#{red}\a"
     output << "\e]6;1;bg;green;brightness;#{green}\a"
     output << "\e]6;1;bg;blue;brightness;#{blue}\a"

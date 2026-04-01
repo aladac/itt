@@ -1,10 +1,12 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 require 'itt'
 
 include ITT
 
 # Display help and exit if no arguments are given
-if ARGV.count == 0
+if ARGV.count.zero?
   puts HELP
   exit
 end
@@ -14,14 +16,14 @@ if ARGV[0] == 'clear'
   print clear_color
   print clear_title
 # If first argument matches one of the colors set the tab color ...
-elsif rgb = COLORS.select { |k, _v| k.to_s =~ /^#{ARGV[0]}/ }.values[0]
+elsif (rgb = COLORS.select { |k, _v| k.to_s =~ /^#{ARGV[0]}/ }.values[0])
   red, green, blue = rgb
   print set_color(red, green, blue)
   # ... and if the second argument is present, set the title from the remaining
   # arguments
-  print set_title ARGV[1..-1].join(' ') if ARGV[1]
+  print set_title ARGV[1..].join(' ') if ARGV[1]
 # If first argument is not a clear command or color set the title from all
 # arguments if at least one is present
 elsif ARGV[0]
-  print set_title ARGV[0..-1].join(' ')
+  print set_title ARGV.join(' ')
 end

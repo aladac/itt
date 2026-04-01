@@ -1,11 +1,13 @@
-source "https://rubygems.org"
-gem "rake", group: %i[development test]
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+gem 'rake', group: %i[development test]
 group :test do
-  gem "rspec"
+  gem 'rspec'
 end
 group :lint do
-  gem "standard"
+  gem 'standard'
 end
 gemspec
 
-gem "simplecov", "~> 0.21.2"
+gem 'simplecov', '~> 0.21.2'
