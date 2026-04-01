@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    itt (0.2.0)
+    itt (0.2.1)
       rumoji (~> 0.4)
 
 GEM
@@ -20,7 +20,7 @@ GEM
     prism (1.9.0)
     racc (1.8.1)
     rainbow (3.1.1)
-    rake (13.0.6)
+    rake (13.3.1)
     regexp_parser (2.11.3)
     rspec (3.11.0)
       rspec-core (~> 3.11.0)
